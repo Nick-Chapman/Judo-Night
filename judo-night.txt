@@ -1,0 +1,255 @@
+
+"Judo Night" by Nick Chapman
+
+
+When play begins, say "'Sorry, in a rush love... just make sure tea's ready when I get back from horse riding... bye!'
+
+Flipping heck! You were just on you way out to Friday night judo. You love Friday night judo. But now you'd better not leave until you get the tea sorted, or else there'll be trouble at mill."
+
+Some car keys are carried by the player. Description is "Keys to the Maz. Brmm brmm!"
+
+
+Section - Burnability
+
+A thing has a number called turns-of-burning. The turns-of-burning is usually 0.
+Definition: a thing is flammable if it has turns-of-burning greater than 0.
+
+A thing can be alight.
+After printing the name of something alight while listing contents, say " (alight)".
+
+Section - Striking, Lighting from, Blowing out
+
+Striking is an action applying to one thing.
+Understand "strike [something preferably held]" as striking.
+
+Check striking: 
+if noun is not the match, say "That's not something you can strike." instead;
+if noun is not held, say "You need to be holding [the noun]" instead;
+if noun is alight, say "[The noun] is already alight." instead;
+if noun is not flammable, say "[The noun] will not catch light." instead;
+
+Carry out striking: now noun is alight.
+Report striking: say "[The noun] is now alight."
+
+Lighting it from is an action applying to two things.
+Understand the command "light" as something new.
+Understand "light [something preferably held] from [something]" as lighting it from.
+Understand "light [something] with [something preferably held]" as lighting it from.
+
+Check lighting from:
+if noun is not held and the second noun is not held, say "You need to be holding either [the noun] or the [second noun]." instead;
+if second noun is not alight, say "[The second noun] [if second noun is plural-named]are[otherwise]is[end if] not alight." instead;
+if noun is alight, say "[The noun] is already alight." instead;
+if noun is not flammable, say "[The noun] will not catch light." instead;
+
+Carry out lighting from: now noun is alight.
+Report lighting from: say "[The noun] is now alight."
+
+
+Burning it with is an action applying to two things.
+Understand the command "burn" as something new.
+Understand "burn [something] with [something preferably held]" as burning it with.
+Instead of burning something with something, try lighting noun from second noun.
+
+Blowing out is an action applying to one thing.
+Understand "blow out [something]" as blowing out.
+
+Check blowing out: if noun is not alight, say "[The noun] is not alight." instead.
+Carry out blowing out: now noun is not alight.
+Report blowing out: say "[The noun] is now out."
+
+
+Section - Kitchen
+
+The kitchen is south of the dining room. "The kitchen is a room you are quite unfamiliar with. She indoors (who seems to be outdoors more and more these days) does things in here. You see some domestic items: Small stove; small worktop; small larder. The back door is to the south. North leads through to the rest of the house." 
+
+The back door is a door. The back door is scenery. It is outside from the kitchen and south of the kitchen. Description is "The back door leads unsurprisingly to the back garden." South of the back door is the back garden. Instead of going to the back garden, say "You don't need to go out there. [if soup is not in pot]Anyway, shouldn't you be getting on with tea?[end if]"
+
+A worktop is scenery in the kitchen. Description is "Sadly, formica not marble." A piece of paper is on the worktop. Description is "TODO: (1) Soup for tea (2) Judo." Understand "todo" or "list" or "todo list" as the piece of paper when we have examined the paper. Printed name of paper is "[if we have examined the paper]todo list[else]piece of paper[end if]". The paper has turns-of-burning 3.
+
+Understand "make tea" as a mistake ("Yes, that's what you have to do.").
+Understand "make soup" as a mistake ("Yes, that's what you have to do.").
+
+A box of matches is on the worktop. The box is closed and openable. Description is "Just a box." The box has turns-of-burning 4. A match is in the box. Description is "The last match." The match has turns-of-burning 1. 
+
+The larder is scenery container in the kitchen. Description is "Normally a good place to find some food, except you ate all of it. Well, nearly all of it..." Before searching the larder: move a carrot to the larder. Description of the carrot is "Orange, like your prized judo belt." 
+
+The carrot is edible. Instead of eating the carrot for the first time, say "Don't you need the carrot for something else?" After eating the carrot: say "Yum yum."; end the game saying "Oops, you're in trouble now."
+
+A stove is scenery in the kitchen. Understand "burner" as the stove. A knob is part of the stove. The knob is a switched off device. The gas is scenery in the kitchen. Description of the gas is "Comes out the burner when the knob is switch on."
+
+Description of the stove is "An old-fashioned gas stove; one burner; one knob. The gas is [if knob is switched on]on[else]off[end if][if stove is alight]. The stove is alight[end if]."
+
+Before switching on the knob: now turns-of-burning of the stove is 1000.
+Before switching off the knob: now turns-of-burning of the stove is 0; now stove is not alight.
+Instead of switching on the stove, try switching on the knob.
+Instead of switching off the stove, try switching off the knob.
+Instead of switching on the gas, try switching on the knob.
+Instead of switching off the gas, try switching off the knob.
+
+Instead of turning the knob: if knob was switched on, try switching off knob; if knob was switched off, try switching on knob.
+
+Instead of lighting the gas from something, try lighting the stove from the second noun.
+
+A cooking pot is on the stove. Description is "A small cast iron cooking pot." The water is in the pot. Description is "Looking closer you can see that it is stock not water." Understand "stock" as the water when we have examined the water.
+
+Temperature is a kind of value. Temperatures are cold, tepid, warm, hot, boiling. The water has a temperature. To say water: say "[temperature of water] [if we have examined the water]stock[else]water[end if]". Printed name of the water is "quantity of [water]". Instead of taking the water, say "The [water] trickles through your fingers[if temperature of water is boiling], scalding them badly[end if]."
+
+Section - Dining Room
+
+The dining room is a room. It is south of the front room. "A pleasingly square room with a large window on the east wall, and an old-fashioned wardrobe standing against the west wall. The front room is to the north and the kitchen to the south. Makes this room a bit of a walkway requiring frequent hoovering. So she indoors says anyway." A large window is scenery and here. The reclaimed-wood table is fixed in place and here. Description is "Large and rectangular; made from reclaimed industrial wood."
+
+The old-fashioned wardrobe is here. It is closed, openable container and scenery. Understand "cupboard" as the wardrobe. Description is "Heavy and very unfashionable. You wonder why you still haven't dumped it yet. Maybe because it is so heavy."
+
+The judo gi is in the wardrobe. The gi is wearable. Description is "This is the judo gi you wear for Friday night judo."  The orange belt is in the wardrobe. The belt is wearable. Description is "Oh, it was so very close to being a green."
+
+A pocket is a container part of the judo gi. Description is "An almost secret pocket sewn into the interior of the gi.[if something is in the pocket] The pocket contains [a list of things in the pocket].[end if]". After wearing the judo gi for the first time: say "As you slip on the gi you feel something hard in the pocket. You had forgotten the gi even had a pocket!"; move a candle stub to the pocket. Description of the candle stub is "A small candle stub left over from last Friday's judo when the lights failed in the dojo. Candle-light judo... what fun!" The candle stub has turns-of-burning 15.
+
+
+Section - Front Room
+
+The front room is a room. "This is your favorite room of the house: Comfy sofa, open fireplace, nice bottle of wine... but you digress. That was last night. Tonight it's Friday night judo... if you can manage to get the tea on. To the north is the front door. The rest of the house is south." The wine bottle is a container in the front room. Description is "Was all drunk last night.".
+
+The sofa is an enterable supporter in the front room. Description is "Oh, so comfy."
+After entering the sofa: if keys are held, move keys to sofa; say "You get onto the sofa. (Have you really time for a rest?)".
+
+The fireplace is a scenery container in the front room. "Still slightly warm from the night before. The fireplace is your favorite part of your favorite room. There's nothing quite like a proper open fire." Understand "fire" as the fireplace. Before searching the fireplace, move the smouldering ember to the fireplace. The smouldering ember has description "Barely alight." The ember has turns-of-burning 200. The ember is alight. Instead of taking the ember, say "No, it's too hot to pick up."
+
+The front door is a door and scenery. It is outside from the front room and north of the front room. Description is "This is your way out to Friday night judo." North of the front door is the finish.
+
+
+Section - Blowing up the house
+
+To decide whether leaking gas: if knob is switched on and the stove is not alight, decide yes; decide no.
+
+Leaked gas is a number that varies. Leaked gas is 0.
+Every turn: if leaking gas then increase the leaked gas by 1.
+Every turn: if not leaking gas and the leaked gas is not 0 and the back door is open, decrease the leaked gas by 1.	
+
+Every turn:
+	if the player is in the kitchen:
+		if leaked gas > 7:
+			say "There is a very strong smell of gas here.";
+		otherwise if leaked gas > 5:
+			say "There is a strong smell of gas here.";
+		otherwise if leaked gas > 3:
+			say "There is a smell of gas here.";
+
+Every turn: if leaked gas > 6 and something alight is enclosed by the kitchen, end the game saying "Gas... Naked flame... KA-BOOM".
+		
+
+Section - Burn rules
+
+Every turn:
+	repeat with item running through alight things:
+		decrease turns-of-burning of the item by 1;
+		if turns-of-burning of item is 0:
+			now item is not alight;
+			if the player can see the item, say "[The item] burns out.".
+	
+
+Section - Making soup
+
+Every turn:
+	if the pot is on the stove and the stove is alight and the water is in the pot:
+		let T be the temperature of the water;
+		if T is not boiling, change the temperature of the water to temperature after T;
+
+Cooking time left is a number that varies. Cooking time left is 3. Every turn: if the carrot is in the pot and the water is in the pot and the temperature of the water is boiling, decrease cooking time left by 1.
+
+The description of soup is "Not very yummy". Printed name of soup is "carrot soup".
+
+Every turn:
+	if cooking time left is 0:
+		remove the carrot from play;
+		remove the water from play;
+		now some soup is in the pot.
+
+
+Section - Ending the game
+
+Instead of going to the finish when the soup is not in the pot, say "You better hadn't go out until you've got the tea sorted."
+
+Instead of going to finish when belt is not held or gi is not held, say "Don't forget your judo kit!"
+
+Instead of going to finish when keys are not held, say "Are you walking to judo?"
+
+Instead of going to finish when stove is alight, say "[one of]Err, haven't you forgotten something?[or]Kitchen safety?...[or]Turn the stove off, dummy![stopping]"
+
+After going to the finish, end the game saying "At last you're off to Friday night judo. Hurrah!"
+
+
+Section - Testing
+
+test light1 with "n / open wardrobe / wear gi / take stub / n / search fireplace / light stub from ember / s / s / switch on gas / light gas from candle".
+
+test light2 with "take paper / take box / n / n / search fireplace / light box from ember / s / s / light paper from box / switch on gas / light gas from paper".
+
+test light3 with "n / n / search fireplace / s / s / take box / switch on gas / n / n / light box from ember / s / s / light gas from box".
+
+test make-soup with "search larder / get carrot / put carrot in pot / z / z / z / l".
+
+test leave with "n / open wardrobe / take gi / take belt / n / open door / out".
+
+[After printing the name of something while listing contents, say " (tob=[turns-of-burning])".]
+
+[
+When play begins (this is the run property checks at the start of play rule): 
+	repeat with item running through things: 
+		unless the item provides the property description: 
+			say "[item] has no description." 
+]
+
+Section - Ideas
+
+[
+DONE:
+back door to let gas out - not to leave
+distinguish gas smell / strong smell?
+more kitchen description - exits! 
+or maybe dont say carrot soup on todo list , just soup. so wont know that need carrot
+more opening / motivating text
+car keys - something to carry when play begins
+and red herring, box of matches - empty, no..
+add a match that burns for 1 turn
+allow the empty match box to burn? yes
+front door to finish - when soup made & judo suit on
+gas is an object - sometimes delegates to stove, sometimes to knob
+understand "Light gas from" -> light stove from"
+(bug fix) table - should be fixed in place.
+(bug fix) oops - the front door is not mentioned!
+sofa - needs to be an object - maybe sarky comment if sit on it & drop keys.
+"light with" - like "light from"
+"turn knob"
+"make soup" --> "yes, that's what you have to do"
+"burn with" -> "light from"
+keys should be described as plural when saying are not alight
+take all - shows player carrot / candle stub etc - need to solve scope issues.
+- scope issues? disallow carrot until search larder. 
+same for stub - before gi is worn
+testing - find carrot / eat carrot
+same for ember in fireplace
+must not be allowed to take water.
+more hints at end - if have left stove on / not got judo stuff.
+
+BUGS, IDEAS...
+
+
+better gas/door handling
+- so if have door open, gas builds up less slowly
+and door open is nesc to allow the early switch on of gas to work
+
+testing - blow house up
+
+water/carrot -> soup, after shown as still water/carrot. but not in scope anymore
+
+allow pot to be heated directly on ember
+table ideas: allow pushable? -cant directly light from ember.
+mind you - could be lit from something else which is held & alight
+so should it be flammable? slowly, maybe smoulders (a diff kind of buring)
+
+scoring?
+sanity check: light from / blow out  on everything
+check what can/can't be take
+dining room window - blow out the candle?
+]
