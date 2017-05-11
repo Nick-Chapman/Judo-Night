@@ -9,6 +9,6 @@ Recently I've been working on niz, my own Z-machine interpreter, and just got a 
 
 Unfortunately, this is the first Inform compiled game I've tried to put through niz, and it reveals a couple of unimplemented .z5 opcodes (save_undo), so you wont get far using niz until I've sorted this.
 
-Happily, I found a nice Android App called "Text Fiction" which allows you to play this game (and any other I assume) on your phone. It has a cool text-chat style interface which takes away much of the pain of typing by supporting common verbs & touching words from the displayed text.
+Happily, I found a nice Android App called "Text Fiction" which allows you to play this game (and any other I assume) on your phone. It has a cool text-chat style interface and takes away much of the pain of typing by supporting common verbs & touching words from the displayed text.
 
 Have fun.
