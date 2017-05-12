@@ -7,7 +7,7 @@ There's really only one puzzle and it's not that hard; maybe 5 minutes if you've
 
 Recently I've been working on niz, my own Z-machine interpreter, and just got a first cut of .z5 support working, when I remembered this IF written nearly a decade earlier & dug it out from an email attachment. There's both the .z5 story file, and the original Inform 7 source. To avoid spoiling the puzzle, hold off on reading the source until you've at least tried the game. But the source is worth looking at to see what NL programming looks like. Lovely to read!
 
-Unfortunately, this is the first Inform compiled game I've tried to put through niz, and it reveals a couple of unimplemented .z5 opcodes (save_undo), so you wont get far using niz until I've sorted this.
+Unfortunately, this is the first Inform compiled game I've tried to put through niz, and it reveals a couple of unimplemented .z5 opcodes (save_undo, restore_undo), so you wont get far using niz until I've sorted this. (**UPDATE: sorted)
 
 Happily, I found a nice Android App called "Text Fiction" which allows you to play this game (and any other I assume) on your phone. It has a cool text-chat style interface and takes away much of the pain of typing by supporting common verbs & touching words from the displayed text.
 
